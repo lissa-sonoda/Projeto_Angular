@@ -1,0 +1,11 @@
+div.container {
+  text-align: center;
+}
+
+div {
+  text-align: left;
+}
+
+.alert {
+  background-color: #cfe2ff;
+}

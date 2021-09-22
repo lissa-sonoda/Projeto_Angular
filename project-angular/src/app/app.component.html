@@ -1,0 +1,217 @@
+<div class="container">
+  <hr />
+  <h2><strong>Esta é uma tela de cadastro</strong></h2>
+  <hr />
+</div>
+
+<div class="container">
+  <form>
+    <!--Parte dos campos do formulário-->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-2">
+          <label for="inputId">Id</label>
+          <input
+            type="id"
+            class="form-control"
+            id="inputId"
+            placeholder="O Id é automático"
+            #inputId
+            [disabled]="true"
+          />
+        </div>
+        <div class="col-10">
+          <label for="inputNome">Nome</label>
+          <input
+            type="nome"
+            class="form-control"
+            id="inputNome"
+            placeholder="Digite o nome"
+            #inputNome
+            [disabled]="editar"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label for="inputEndereco">Endereço</label>
+          <input
+            type="endereco"
+            class="form-control"
+            id="inputEndereco"
+            placeholder="Digite o endereço"
+            #inputEndereco
+            [disabled]="editar"
+          />
+        </div>
+        <div class="col-6">
+          <label for="inputCidade">Cidade</label>
+          <input
+            type="cidade"
+            class="form-control"
+            id="inputCidade"
+            placeholder="Digite a cidade"
+            #inputCidade
+            [disabled]="editar"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label for="inputBairro">Bairro</label>
+          <input
+            type="bairro"
+            class="form-control"
+            id="inputBairro"
+            placeholder="Digite o bairro"
+            #inputBairro
+            [disabled]="editar"
+          />
+        </div>
+        <div class="col-3">
+          <label for="inputCep">CEP</label>
+          <input
+            type="cep"
+            class="form-control"
+            id="inputCep"
+            placeholder="00000-000"
+            #inputCep
+            [disabled]="editar"
+          />
+        </div>
+        <div class="col-3">
+          <label for="inputTelefone">Telefone</label>
+          <input
+            type="telefone"
+            class="form-control"
+            id="inputTelefone"
+            placeholder="(xx) xxxxx-xxxx"
+            #inputTelefone
+            [disabled]="editar"
+          />
+        </div>
+      </div>
+
+      <!--Parte dos botões principais-->
+
+      <div class="container" [hidden]="menuPrincipal">
+        <div class="row alert alert-primary mt-3 p-3">
+          <div class="col-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="novo()"
+            >
+              Novo
+            </button>
+          </div>
+          <div class="col-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="alterar()"
+            >
+              Alterar
+            </button>
+          </div>
+          <div class="col-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="excluir()"
+            >
+              Excluir
+            </button>
+          </div>
+          <div class="col-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="procurar()"
+            >
+              Procurar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Parte do botão de salvar-->
+
+      <div class="container" [hidden]="opcoesSalvar">
+        <div class="row alert alert-primary mt-3 p-3">
+          <div class="col-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="gravar()"
+            >
+              Gravar
+            </button>
+          </div>
+          <div class="col-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="cancelar()"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Parte do botão de excluir-->
+
+      <div class="container" [hidden]="opcoesExcluir">
+        <div class="row alert alert-primary mt-3 p-3">
+          <div class="col-5">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="cancelar()"
+            >
+              Você tem certeza que quer excluir este registro?
+            </button>
+          </div>
+          <div class="col-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="cancelar()"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Parte do botão de busca-->
+
+      <div class="container" [hidden]="opcoesBuscar">
+        <div class="row alert alert-primary mt-3 p-3">
+          <div class="col-9">
+            <label for="inputBusca"></label>
+            <input
+              type="busca"
+              class="form-control"
+              id="inputBusca"
+              placeholder="Digite um nome a ser procurado"
+              #inputBusca
+              [disabled]="true"
+            />
+          </div>
+          <div class="col-3">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="cancelar()"
+            >
+              Procurar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
